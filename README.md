@@ -1,15 +1,11 @@
-<a href="https://heroku.com/deploy?template=https://github.com/TerserahUbot/WIKI-UBOT.git">
+## AMBIL STRING LU DISINI:
+<p align="center"><a 
+href="https://replit.com/@Wiki28/Session-String-Generator?v=1"><img 
+src="https://img.shields.io/badge/Generate%20String%20Sesion-000000?style=flat&logo=replit&logoColor=white" width="250" height="38.60" />
+</a></p>
 
-<p align="center">
-  <a href="https://github.com/ramadhani892/RAM-UBOT/fork">
-    <img src="https://img.shields.io/github/forks/TerserahUbot/WIKI-UBOT?label=Fork&style=social">
-    
-  </a>
-  <a href="https://github.com/TerserahUbot/WIKI-UBOT">
-    <img src="https://img.shields.io/github/stars/TerserahUbot/WIKI-UBOT?style=social">
-  </a>
-</p>  
-
-![VIEWS](https://komarev.com/ghpvc/?username=terserah_wiki)
-
-<a href="https://t.me/wikispambot"><img src="https://img.shields.io/badge/KODE%20PENILAIAN-A+-blue.svg?style=for-the-badge&logo=Factor.">
+## DEPLOY TO HEROKU 💜
+<p align="center"><a 
+href="https://heroku.com/deploy?template=https://github.com/TerserahUbot/WIKI-UBOT/"> <img 
+src="https://img.shields.io/badge/Deploy%20To%20Heroku-DE1EFB?style=flat&logo=heroku" width="250" height="38.60" />
+</a></p>
