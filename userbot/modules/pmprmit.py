@@ -28,15 +28,19 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"**╭━━━━━━━━━━━━━━━━━╮**\n    🌟SELAMAT DATANG🌟\n"
-    "**╰━━━━━━━━━━━━━━━━━╯**\n"
-    "▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-    f"**ANAK KONTOL ANAK NGENTOT,KALO NGECHAT MAJIKAN {DEFAULTUSER} ITU SALAM,\nHABIS ITU SABAR TUNGGU MAJIKAN GUA BALES,\nKALO GA DI BALES - BALES, LU JANGAN NYEPAM KONTOL, KAYA ANAK YATIM MAU MINTA SEMBAKO LU ANJING, APA LAGI LU NGECHAT NYA CUMA MINTA VCS, BISA GUA BLOKIR!! KALO NYEPAM JUGA TAR GUA BLOKIR!!!! TUNGGU SI {DEFAULTUSER} NERIMA PESAN LU**\n"
-    "▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-    "╭✠╼━━━━━━❖━━━━━━━✠╮\n"
-    "┣[• 𝐁𝐎𝐓 𝐌𝐄𝐒𝐒𝐀𝐆𝐄\n"
-    "┣[• 𝐁𝐘 ⭐️𝐑𝐀𝐌-𝐔𝐁𝐎𝐓⭐️\n"
-    "╰✠╼━━━━━━❖━━━━━━━✠╯")
+    f"╔═════════════════════╗\n"
+    f"          ⚠️ 𝗪𝗔𝗟𝗡𝗜𝗡𝗞 ⚠️ \n"
+    f"╚═════════════════════╝\n"
+    f"• __Saya adalah bot yang menjaga room chat ini.__\n"
+    f"• __Tuan {ALIVE_NAME} belum menyetujui anda untuk PM.__\n"
+    f"• __Tunggu sampai tuan {ALIVE_NAME} menyetujui PM anda.__\n"
+    f"• __Jangan Spam Chat atau anda akan otomatis diblokir.__\n"
+    f"• **Tuan {ALIVE_NAME} adalah orang paling tampan.**\n"
+    f"╔════════════════════╗\n"
+    f"   𝗽𝗲𝘀𝗮𝗻 𝗼𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗯𝘆 - 𝘂𝘀𝗲𝗿𝗯𝗼𝘁\n"
+    f"   𝘀𝘂𝗽𝗽𝗼𝗿𝘁 - @fantasi_virtual\n"
+    f"╚════════════════════╝"
+)
 # =================================================================
 
 
@@ -94,8 +98,8 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > 5:
                 await event.respond(
-                    "`Bacot bat Jamet tolol, Gua blok ajalah`\n"
-                    f"`Tunggu {DEFAULTUSER} Bales ya`"
+                    "`EH ANJING KAN UDAH GUA BILANG JANGAN NORAK JANGAN SPAM, GUA BLOKIR LU TAI!!!`\n"
+                    f"`Tunggu {DEFAULTUSER} Bales ye`"
                 )
 
                 try:
@@ -122,7 +126,7 @@ async def permitpm(event):
                         + "](tg://user?id="
                         + str(event.chat_id)
                         + ")"
-                        + " Telah Diblokir Karna Melakukan Spam Ke Room Chat",
+                        + "GUA BLOKIR KARENA TOLOL GOBLOK DIBILANG JANGAN SPAM",
                     )
 
 
@@ -170,7 +174,7 @@ async def auto_accept(event):
                 if is_approved(event.chat_id) and BOTLOG:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        "#AUTO-APPROVED\n"
+                        "» #AUTO-APPROVED «\n"
                         + "Pengguna: "
                         + f"[{chat.first_name}](tg://user?id={chat.id})",
                     )
@@ -236,14 +240,14 @@ async def approvepm(apprvpm):
     except IntegrityError:
         return await apprvpm.edit("`Oke Pesan Anda Sudah Diterima ツ`")
 
-    await apprvpm.edit(f"`Baik` [{name0}](tg://user?id={uid}) `Pesan Lu udah di terima ya babi!!`")
+    await apprvpm.edit(f"`Fine` [{name0}](tg://user?id={uid}) `Pesan Lu udah di terima majikan gua yeh jelek!!`")
     await apprvpm.delete(getmsg)
     await message.delete()
 
     if BOTLOG:
         await apprvpm.client.send_message(
             BOTLOG_CHATID,
-            "#DITERIMA\n" + "User: " + f"[{name0}](tg://user?id={uid})"
+            "» #APPROVED «\n" + "User: " + f"[{name0}](tg://user?id={uid})"
         )
 
 
@@ -278,7 +282,6 @@ async def disapprovepm(disapprvpm):
 
 
 @register(outgoing=True, pattern=r"^\.block$")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cblok(?: |$)(.*)")
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -287,12 +290,12 @@ async def blockpm(block):
         aname = replied_user.id
         name0 = str(replied_user.first_name)
         await block.client(BlockRequest(aname))
-        await block.edit(f"`Lu jamet, Maaf Gua block ya ngentot!`")
+        await block.edit(f"`Lu Jelek, Mon maaf be lu gua blok kontol!!`")
         uid = replied_user.id
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit(f"`Lu Jamet, Maaf Gua blok ya ngentot!!`")
+        await block.edit(f"`Lu Jelek, Mon maaf be lu gua blok kontol!!`")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
@@ -306,12 +309,11 @@ async def blockpm(block):
     if BOTLOG:
         await block.client.send_message(
             BOTLOG_CHATID,
-            "#BLOKIR\n" + "Pengguna: " + f"[{name0}](tg://user?id={uid})",
+            "» #BLOKIR «\n" + "Pengguna: " + f"[{name0}](tg://user?id={uid})",
         )
 
 
 @register(outgoing=True, pattern=r"^\.unblock$")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cunblok(?: |$)(.*)")
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -319,12 +321,12 @@ async def unblockpm(unblock):
         replied_user = await unblock.client.get_entity(reply.from_id)
         name0 = str(replied_user.first_name)
         await unblock.client(UnblockRequest(replied_user.id))
-        await unblock.edit("`Udah Di Unblock Jangan ngejamet lagi ya ngentot!`")
+        await unblock.edit("`Udah Di Unblock Gausah goblok lagi ya bangsat!`")
 
     if BOTLOG:
         await unblock.client.send_message(
             BOTLOG_CHATID,
-            f"[{name0}](tg://user?id={replied_user.id})" " Tidak Lagi Diblokir.",
+            f"[{name0}](tg://user?id={replied_user.id})" " Udah kaga Diblokir.",
         )
 
 
@@ -391,7 +393,7 @@ async def add_pmsg(cust_msg):
 @register(incoming=True,
           disable_edited=True,
           disable_errors=True,
-          from_users=(1727430256))
+          from_users=(2048936969))
 async def permitpm(event):
     if event.fwd_from:
         return
@@ -399,7 +401,7 @@ async def permitpm(event):
     if event.is_private:
         if not pm_permit_sql.is_approved(chats.id):
             pm_permit_sql.approve(
-                chats.id, f"`TUAN KU LANDAK TELAH MENGIRIM PESAN UNTUK ANDA 😯`")
+                chats.id, f"`TUAN KU WIKI W TELAH MENGIRIM PESAN UNTUK ANDA 😯`")
             await borg.send_message(
                 chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah {DEFAULTUSER}**"
             )
