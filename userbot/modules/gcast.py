@@ -17,7 +17,7 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        await event.edit("**Kata² Promosi Li Mana Pea🗿??**")
+        await event.edit("**Kata² Promosi Lo Mana Pea🗿??**")
         return
     kk = await event.edit("`Lagi Sebar Promosi Jual Diri Lo Nih!!!!!`")
     er = 0
