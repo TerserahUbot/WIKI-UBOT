@@ -71,30 +71,30 @@ async def get_readable_time(seconds: int) -> str:
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^gesss$")
-async def _(landak):
-    await landak.reply(random.choice(gesss))
+async def _(wiki):
+    await wiki.reply(random.choice(gesss))
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^brb$")
-async def _(landak):
-    await landak.reply(random.choice(brb))
+async def _(wiki):
+    await wiki.reply(random.choice(brb))
 
 
 @register(outgoing=True, pattern="^.ping$")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cping$")
+@register(incoming=True, from_users=2048936969, pattern=r"^\.cping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("Assalamualaikum..")
+    await pong.edit("Assalamualaikum Tuhan Yesus Memberkati..")
     await asyncio.sleep(1)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**KONTOOLLLL!!**\n**KEKUATAN KONTOL** : `%sms`\n**DURASI KONTOL** : `{uptime}🕛`" % (duration))
+    await pong.edit(f"**BANSOS!!**\n**KEKUATAN BANSOS** : `%sms`\n**DURASI BANSOS** : `{uptime}🕛`" % (duration))
 
 
 @register(outgoing=True, pattern="^Ping$")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cpi$")
+@register(incoming=True, from_users=2048936969, pattern=r"^\.cpi$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
